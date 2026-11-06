@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+option go_package = "github.com/Beytullah-Ozdemir/Mandatory-Activity-4/grpc";
+
+package mutex;
