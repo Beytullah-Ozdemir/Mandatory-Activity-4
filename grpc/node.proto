@@ -1,5 +1,16 @@
 syntax = "proto3";
-
 option go_package = "github.com/Beytullah-Ozdemir/Mandatory-Activity-4/grpc";
 
-package mutex;
+message Request{
+    int64 logical_timestamp = 1; 
+    int64 node_id= 2;
+}
+
+message Reply{
+    int64 logical_timestamp = 1; 
+    int64 node_id = 2;
+}
+
+service NodeService{
+        rpc RequestAccess(Request) returns(Reply);
+}
