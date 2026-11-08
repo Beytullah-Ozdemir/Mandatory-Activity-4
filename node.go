@@ -22,5 +22,4 @@ type Node struct {
 	mu                 sync.Mutex
 	deferred           []chan struct{}
 	peers              map[string]proto.NodeServiceClient
-	deferred           []chan struct{}
 }
