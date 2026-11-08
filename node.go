@@ -21,4 +21,5 @@ type Node struct {
 	clock              LamportClock
 	mu                 sync.Mutex
 	peers              map[string]proto.NodeServiceClient
+	deferred           []chan struct{}
 }
