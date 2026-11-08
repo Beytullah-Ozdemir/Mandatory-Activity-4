@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net"
 
@@ -40,39 +41,42 @@ func (s *NodeServer) RequestAccess(ctx context.Context, req *proto.Request) (*pr
 
 	case Released:
 		s.node.mu.Unlock()
-		return &proto.Reply{}, nil
+		return s.node.makeReply(req), nil
 
 	case Wanted:
 
 		if req.GetLogicalTimestamp() < s.node.TimestampOnRequest {
 			s.node.mu.Unlock()
-			return &proto.Reply{}, nil
+			return s.node.makeReply(req), nil
 
 		} else if req.GetLogicalTimestamp() == s.node.TimestampOnRequest && req.GetNodeId() < s.node.id {
 			s.node.mu.Unlock()
-			return &proto.Reply{}, nil
+			return s.node.makeReply(req), nil
 
 		} else {
-			return s.waitToReply()
+			return s.waitToReply(req)
 		}
 
 	case Held:
-		return s.waitToReply()
+		return s.waitToReply(req)
 	}
-	return &proto.Reply{}, nil
-
+	state := s.node.state
+	s.node.mu.Unlock()
+	return nil, fmt.Errorf("invalid state: %v", state)
 }
 
 func (n *Node) makeReply(req *proto.Request) *proto.Reply {
-	n.clock.Tick()
-	log.Printf("[Node %d] event=REPLY_SENT to=%d lamport=%d", n.id, req.GetNodeId(), n.clock.Now())
-	return &proto.Reply{}
+	t := n.clock.Tick()
+	log.Printf("[Node %d] event=REPLY_SENT to=%d lamport=%d", n.id, req.GetNodeId(), t)
+	return &proto.Reply{LogicalTimestamp: t, NodeId: n.id}
 }
 
-func (s *NodeServer) waitToReply() (*proto.Reply, error) {
+func (s *NodeServer) waitToReply(req *proto.Request) (*proto.Reply, error) {
 	ready := make(chan struct{})
 	s.node.deferred = append(s.node.deferred, ready)
+	log.Printf("[Node %d] event=REPLY_DEFERRED to=%d request_time=%d",
+		s.node.id, req.GetNodeId(), req.GetLogicalTimestamp())
 	s.node.mu.Unlock()
 	<-ready
-	return &proto.Reply{}, nil
+	return s.node.makeReply(req), nil
 }
