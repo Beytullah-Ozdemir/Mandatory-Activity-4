@@ -78,12 +78,15 @@ func (n *Node) exitCS() {
 	log.Printf("[Node %d] event=EXITED_CS released_deferred=%d", n.id, len(waiting))
 }
 
-// 5. run keeps requesting the critical section at random intervals, forever.
-func (n *Node) run() {
-	for {
+// 5. run requests the critical section `rounds` times.
+// Afterwards main keeps the program (and with it the server) running until Ctrl+C,
+// so the other nodes still get their replies.
+func (n *Node) run(rounds int) {
+	for i := 0; i < rounds; i++ {
 		time.Sleep(time.Duration(1+rand.Intn(3)) * time.Second)
 		n.enterCS()
 		n.criticalSection()
 		n.exitCS()
 	}
+	log.Printf("[Node %d] event=DONE rounds=%d", n.id, rounds)
 }

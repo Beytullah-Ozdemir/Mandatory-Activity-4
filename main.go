@@ -44,7 +44,7 @@ func main() {
 	}
 	node.connectToPeers(peerPorts)
 
-	go node.run()
+	go node.run(3) // request the CS 3 times, then just keep answering
 
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, os.Interrupt, syscall.SIGTERM)
