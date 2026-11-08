@@ -20,5 +20,6 @@ type Node struct {
 	TimestampOnRequest int64
 	clock              LamportClock
 	mu                 sync.Mutex
+	deferred           []chan struct{}
 	peers              map[string]proto.NodeServiceClient
 }
