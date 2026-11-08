@@ -1,0 +1,38 @@
+2026/11/08 15:30:45.654083 [Server] event=STARTUP port=5001
+2026/11/08 15:30:47.653250 [Node 1] event=REQUEST_SENT lamport=1
+2026/11/08 15:30:57.585544 [Node 1] event=REPLY_RECEIVED from=3 lamport=4
+2026/11/08 15:30:59.105349 [Node 1] event=REQUEST_RECEIVED from=3 lamport=5 request_time=4
+2026/11/08 15:30:59.105349 [Node 1] event=REPLY_DEFERRED to=3 request_time=4
+2026/11/08 15:31:04.214914 [Node 1] event=REPLY_RECEIVED from=2 lamport=9
+2026/11/08 15:31:04.214914 [Node 1] event=ENTERED_CS lamport=9
+2026/11/08 15:31:04.369143 [Node 1] event=REQUEST_RECEIVED from=2 lamport=10 request_time=9
+2026/11/08 15:31:04.369660 [Node 1] event=REPLY_DEFERRED to=2 request_time=9
+2026/11/08 15:31:06.215069 [Node 1] event=LEAVING_CS lamport=10
+2026/11/08 15:31:06.224611 [Node 1] event=EXITED_CS released_deferred=2
+2026/11/08 15:31:06.225144 [Node 1] event=REPLY_SENT to=3 lamport=12
+2026/11/08 15:31:06.225144 [Node 1] event=REPLY_SENT to=2 lamport=11
+2026/11/08 15:31:09.225539 [Node 1] event=REQUEST_SENT lamport=13
+2026/11/08 15:31:09.226713 [Node 1] event=REPLY_RECEIVED from=3 lamport=17
+2026/11/08 15:31:09.236564 [Node 1] event=REQUEST_RECEIVED from=3 lamport=18 request_time=17
+2026/11/08 15:31:09.236564 [Node 1] event=REPLY_DEFERRED to=3 request_time=17
+2026/11/08 15:31:10.237465 [Node 1] event=REPLY_RECEIVED from=2 lamport=20
+2026/11/08 15:31:10.238031 [Node 1] event=ENTERED_CS lamport=20
+2026/11/08 15:31:11.237985 [Node 1] event=REQUEST_RECEIVED from=2 lamport=22 request_time=21
+2026/11/08 15:31:11.237985 [Node 1] event=REPLY_DEFERRED to=2 request_time=21
+2026/11/08 15:31:12.238642 [Node 1] event=LEAVING_CS lamport=22
+2026/11/08 15:31:12.238642 [Node 1] event=EXITED_CS released_deferred=2
+2026/11/08 15:31:12.238642 [Node 1] event=REPLY_SENT to=3 lamport=23
+2026/11/08 15:31:12.238642 [Node 1] event=REPLY_SENT to=2 lamport=24
+2026/11/08 15:31:13.238771 [Node 1] event=REQUEST_SENT lamport=25
+2026/11/08 15:31:14.240300 [Node 1] event=REPLY_RECEIVED from=3 lamport=29
+2026/11/08 15:31:16.240949 [Node 1] event=REQUEST_RECEIVED from=3 lamport=30 request_time=29
+2026/11/08 15:31:16.240949 [Node 1] event=REPLY_DEFERRED to=3 request_time=29
+2026/11/08 15:31:16.241496 [Node 1] event=REPLY_RECEIVED from=2 lamport=32
+2026/11/08 15:31:16.242037 [Node 1] event=ENTERED_CS lamport=32
+2026/11/08 15:31:18.242207 [Node 1] event=LEAVING_CS lamport=32
+2026/11/08 15:31:18.242207 [Node 1] event=EXITED_CS released_deferred=1
+2026/11/08 15:31:18.242207 [Node 1] event=DONE rounds=3
+2026/11/08 15:31:18.242207 [Node 1] event=REPLY_SENT to=3 lamport=33
+2026/11/08 15:31:19.241781 [Node 1] event=REQUEST_RECEIVED from=2 lamport=34 request_time=33
+2026/11/08 15:31:19.242394 [Node 1] event=REPLY_SENT to=2 lamport=35
+2026/11/08 15:33:36.218332 [Node 1] event=SHUTDOWN lamport=35

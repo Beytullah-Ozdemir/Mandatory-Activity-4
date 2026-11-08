@@ -1,0 +1,37 @@
+2026/11/08 15:31:03.358934 [Server] event=STARTUP port=5002
+2026/11/08 15:31:04.051644 [Node 2] event=REQUEST_RECEIVED from=3 lamport=5 request_time=4
+2026/11/08 15:31:04.051644 [Node 2] event=REPLY_SENT to=3 lamport=6
+2026/11/08 15:31:04.214914 [Node 2] event=REQUEST_RECEIVED from=1 lamport=7 request_time=1
+2026/11/08 15:31:04.214914 [Node 2] event=REPLY_SENT to=1 lamport=8
+2026/11/08 15:31:04.358092 [Node 2] event=REQUEST_SENT lamport=9
+2026/11/08 15:31:06.225144 [Node 2] event=REPLY_RECEIVED from=1 lamport=12
+2026/11/08 15:31:08.236016 [Node 2] event=REPLY_RECEIVED from=3 lamport=15
+2026/11/08 15:31:08.236016 [Node 2] event=ENTERED_CS lamport=15
+2026/11/08 15:31:09.226044 [Node 2] event=REQUEST_RECEIVED from=1 lamport=16 request_time=13
+2026/11/08 15:31:09.227310 [Node 2] event=REPLY_DEFERRED to=1 request_time=13
+2026/11/08 15:31:09.236564 [Node 2] event=REQUEST_RECEIVED from=3 lamport=18 request_time=17
+2026/11/08 15:31:09.236564 [Node 2] event=REPLY_DEFERRED to=3 request_time=17
+2026/11/08 15:31:10.236738 [Node 2] event=LEAVING_CS lamport=18
+2026/11/08 15:31:10.236738 [Node 2] event=EXITED_CS released_deferred=2
+2026/11/08 15:31:10.236738 [Node 2] event=REPLY_SENT to=1 lamport=19
+2026/11/08 15:31:10.236738 [Node 2] event=REPLY_SENT to=3 lamport=20
+2026/11/08 15:31:11.237344 [Node 2] event=REQUEST_SENT lamport=21
+2026/11/08 15:31:12.239271 [Node 2] event=REPLY_RECEIVED from=1 lamport=25
+2026/11/08 15:31:13.239297 [Node 2] event=REQUEST_RECEIVED from=1 lamport=26 request_time=25
+2026/11/08 15:31:13.239297 [Node 2] event=REPLY_DEFERRED to=1 request_time=25
+2026/11/08 15:31:14.240300 [Node 2] event=REPLY_RECEIVED from=3 lamport=28
+2026/11/08 15:31:14.240300 [Node 2] event=ENTERED_CS lamport=28
+2026/11/08 15:31:16.240949 [Node 2] event=LEAVING_CS lamport=28
+2026/11/08 15:31:16.240949 [Node 2] event=REQUEST_RECEIVED from=3 lamport=30 request_time=29
+2026/11/08 15:31:16.240949 [Node 2] event=REPLY_DEFERRED to=3 request_time=29
+2026/11/08 15:31:16.240949 [Node 2] event=EXITED_CS released_deferred=2
+2026/11/08 15:31:16.240949 [Node 2] event=REPLY_SENT to=1 lamport=31
+2026/11/08 15:31:16.241496 [Node 2] event=REPLY_SENT to=3 lamport=32
+2026/11/08 15:31:19.241781 [Node 2] event=REQUEST_SENT lamport=33
+2026/11/08 15:31:19.242394 [Node 2] event=REPLY_RECEIVED from=1 lamport=36
+2026/11/08 15:31:20.243329 [Node 2] event=REPLY_RECEIVED from=3 lamport=37
+2026/11/08 15:31:20.243329 [Node 2] event=ENTERED_CS lamport=37
+2026/11/08 15:31:22.243840 [Node 2] event=LEAVING_CS lamport=37
+2026/11/08 15:31:22.243840 [Node 2] event=EXITED_CS released_deferred=0
+2026/11/08 15:31:22.243840 [Node 2] event=DONE rounds=3
+2026/11/08 15:33:36.218944 [Node 2] event=SHUTDOWN lamport=37

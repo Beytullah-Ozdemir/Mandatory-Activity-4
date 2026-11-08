@@ -71,11 +71,11 @@ func (n *Node) exitCS() {
 	waiting := n.deferred
 	n.deferred = nil
 	n.mu.Unlock()
-
+	log.Printf("[Node %d] event=EXITED_CS released_deferred=%d", n.id, len(waiting))
 	for _, ch := range waiting {
 		close(ch) // wakes up a waiting RequestAccess in server.go, which then sends its reply
 	}
-	log.Printf("[Node %d] event=EXITED_CS released_deferred=%d", n.id, len(waiting))
+
 }
 
 // 5. run requests the critical section `rounds` times.
