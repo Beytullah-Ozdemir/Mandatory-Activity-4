@@ -38,13 +38,19 @@ Mandatory-Activity-4/
 ## How to Run
 
 # Terminal 1
+ ```bash
 go run . -id 1 -port 5001 -peers 5002,5003
+```
 
 # Terminal 2
+ ```bash
 go run . -id 2 -port 5002 -peers 5001,5003
+```
 
 # Terminal 3
+ ```bash
 go run . -id 3 -port 5003 -peers 5001,5002
+```
 
 Each node asks for the critical section a few times at random intervals. When a node has finished, it logs event=DONE and keeps answering the others.
 Press Ctrl+C in every terminal once all three nodes have logged DONE.
